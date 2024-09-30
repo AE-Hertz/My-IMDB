@@ -23,7 +23,7 @@ const favoriteApi = {
                 mediaType,
                 mediaTitle,
                 mediaPoster,
-                mediaRate,
+                mediaRate
             });
 
             return { response };

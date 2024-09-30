@@ -14,7 +14,7 @@ export const routesGen = {
     mediaDetail: (type, id) => `/${type}/${id}`,
     mediaSearch: "/search",
     person: (id) => `/person/${id}`,
-    favorite: "/favorites",
+    favoriteList: "/favorites",
     reviewList: "/reviews",
     passwordUpdate: "password-update",
 };
@@ -67,7 +67,7 @@ const routes = [
         element: <MediaList />,
     },
     {
-        path: "/:mediaType/:mediaid",
+        path: "/:mediaType/:mediaId",
         element: <MediaDetail />,
     },
 ];

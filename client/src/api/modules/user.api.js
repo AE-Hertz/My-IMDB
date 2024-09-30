@@ -1,5 +1,5 @@
-import privateClient from "../client/private.client.js";
-import publicClient from "../client/public.client.js";
+import privateClient from "../client/private.client";
+import publicClient from "../client/public.client";
 
 const userEndpoints = {
     signin: "user/signin",
@@ -11,12 +11,15 @@ const userEndpoints = {
 const userApi = {
     signin: async ({ username, password }) => {
         try {
+            console.log("send request");
             const response = await publicClient.post(userEndpoints.signin, {
                 username,
                 password,
             });
+
             return { response };
         } catch (err) {
+            console.log("err");
             return { err };
         }
     },
@@ -28,6 +31,7 @@ const userApi = {
                 confirmPassword,
                 displayName,
             });
+
             return { response };
         } catch (err) {
             return { err };
@@ -35,19 +39,20 @@ const userApi = {
     },
     getInfo: async () => {
         try {
-            const response = await privateClient.post(userEndpoints.getInfo);
+            const response = await privateClient.get(userEndpoints.getInfo);
+
             return { response };
         } catch (err) {
             return { err };
         }
     },
-    passwordUpdate: async ({ password, newPassword, confirmnewPassword }) => {
+    passwordUpdate: async ({ password, newPassword, confirmNewPassword }) => {
         try {
-            const response = await privateClient.put(userEndpoints.signup, {
-                password,
-                newPassword,
-                confirmnewPassword,
-            });
+            const response = await privateClient.put(
+                userEndpoints.passwordUpdate,
+                { password, newPassword, confirmNewPassword }
+            );
+
             return { response };
         } catch (err) {
             return { err };
@@ -55,5 +60,4 @@ const userApi = {
     },
 };
 
-
-export default userApi
+export default userApi;

@@ -1,5 +1,5 @@
-import privateClient from "../client/private.client.js";
-import publicClient from "../client/public.client.js";
+import privateClient from "../client/private.client";
+import publicClient from "../client/public.client";
 
 const mediaEndpoints = {
     list: ({ mediaType, mediaCategory, page }) =>
@@ -15,6 +15,7 @@ const mediaApi = {
             const response = await publicClient.get(
                 mediaEndpoints.list({ mediaType, mediaCategory, page })
             );
+
             return { response };
         } catch (err) {
             return { err };
@@ -25,6 +26,7 @@ const mediaApi = {
             const response = await privateClient.get(
                 mediaEndpoints.detail({ mediaType, mediaId })
             );
+
             return { response };
         } catch (err) {
             return { err };
@@ -35,6 +37,7 @@ const mediaApi = {
             const response = await publicClient.get(
                 mediaEndpoints.search({ mediaType, query, page })
             );
+
             return { response };
         } catch (err) {
             return { err };

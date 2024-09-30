@@ -1,4 +1,4 @@
-import responseHandler from "../handler/response.handler.js";
+import responseHandler from "../handlers/response.handler.js";
 import reviewModel from "../models/review.model.js";
 
 const create = async (req, res) => {
@@ -13,7 +13,7 @@ const create = async (req, res) => {
 
         await review.save();
 
-        responseHandler.created(response, {
+        responseHandler.created(res, {
             ...review._doc,
             id: review.id,
             user: req.user,
@@ -49,6 +49,7 @@ const getReviewsOfUser = async (req, res) => {
                 user: req.user.id,
             })
             .sort("-createdAt");
+
         responseHandler.ok(res, reviews);
     } catch {
         responseHandler.error(res);

@@ -1,11 +1,11 @@
 const mediaType = {
     movie: "movie",
-    tv: "tv",
+    tv: "tv"
 };
 
 const mediaCategory = {
     popular: "popular",
-    top_rated: "top_rated",
+    top_rated: "top_rated"
 };
 
 const backdropPath = (imgEndpoint) =>
@@ -22,5 +22,7 @@ const tmdbConfigs = {
     mediaCategory,
     backdropPath,
     posterPath,
-    youtubePath,
+    youtubePath
 };
+
+export default tmdbConfigs;

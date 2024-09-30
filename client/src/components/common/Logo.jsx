@@ -7,7 +7,7 @@ const Logo = () => {
     return (
         <>
             <Typography fontWeight="700" fontSize="1.7rem">
-                MOON
+                IMDB
                 <span style={{ color: theme.palette.primary.main }}>
                     KNIGHT
                 </span>

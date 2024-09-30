@@ -15,7 +15,7 @@ const main = [
     },
     {
         display: "movies",
-        path: "/movies",
+        path: "/movie",
         icon: <SlideshowOutlinedIcon />,
         state: "movie",
     },
