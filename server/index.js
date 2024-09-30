@@ -56,5 +56,3 @@ app.use((err, req, res, next) => {
     console.error('Error in request handling:', err);
     res.status(500).send('Internal Server Error');
 });
-
-export default app;
